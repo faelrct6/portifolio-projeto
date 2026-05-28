@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/icon-title.png">
+    <title>Avaliações de Filmes</title>
+    <link rel="stylesheet" href="/styles/style-filmes.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+        <nav class="nav-links">
+            <a href="../index.html" class="nav-link">Inicio</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="buscar">
+    <h1>Avaliações de <span>Filmes</span></h1>
+    <p>Pesquise qualquer filme ou selecione um dos destaques abaixo para ver notas, gêneros e detalhes.</p>
+
+    <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Ex: Inception, The Batman, Duna…" autocomplete="off" />
+    </div>
+
+    <div class="dropdown-wrapper">
+        <select id="movieSelect">
+            <option value="">▾ Selecione um filme em destaque</option>
+        </select>
+        <span class="dropdown-arrow">▾</span>
+    </div>
+</section>
+
+<main class="site-container">
+
+    <div id="loading">
+        <div class="spinner"></div>
+        <p>Buscando filmes…</p>
+    </div>
+
+    <div id="errorMsg">⚠️ Não foi possível carregar os dados. Verifique sua conexão.</div>
+
+    <!-- Movie Detail -->
+    <div id="movieDetail"></div>
+
+    <!-- Trending -->
+    <div id="trendingSection">
+        <div class="section-header" id="trending">
+            <h2>Em Alta Esta Semana</h2>
+            <div class="section-line"></div>
+            <span class="section-badge">TRENDING</span>
+        </div>
+        <div class="movies-grid" id="trendingGrid">
+            <!-- filled by JS -->
+        </div>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <p>Dados fornecidos por <a href="https://www.themoviedb.org" target="_blank">TMDB</a> &mdash; CineScope &copy; 2026</p>
+</footer>
+
+<script src="/script/script-filmes.js"></script>
+</body>
+</html>

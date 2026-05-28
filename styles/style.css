@@ -1,0 +1,233 @@
+/* --- CONFIGURAÇÕES GERAIS (Paleta Dark Neon) --- */
+html {
+    scroll-behavior: smooth; /* Mantém a rolagem da página suave */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0b0c10; /* Preto profundo do tema original */
+    color: #c5c6c7; /* Texto claro principal */
+    line-height: 1.6;
+    padding-top: 70px; /* Espaço para o conteúdo não sumir sob a navbar */
+}
+
+/* BARRA DE NAVEGAÇÃO FIXA NO TOPO */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000; 
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2); /* Linha divisória em azul neon */
+    z-index: 1000;
+    display: block; 
+}
+
+/* CLASSE QUE TORNA A NAVBAR INVISÍVEL AO ROLAR PARA BAIXO */
+.navbar.esconder {
+    display: none; /* Some completamente da tela de forma seca */
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #c5c6c7; 
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #417dff; /* Realce em Azul no Hover */
+}
+
+/* CONTAINER CENTRAL DO CONTEÚDO */
+.site-container {
+    max-width: 900px;
+    margin: 0 auto;   
+    padding: 0 30px;  
+}
+
+/* SEÇÕES FLUIDAS */
+.secao-conteudo {
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(69, 162, 158, 0.1);
+}
+
+.secao-conteudo:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 25px;
+}
+
+/* HEADER DO PERFIL */
+#perfil-topo {
+    text-align: center;
+    padding: 60px 0 40px 0;
+    border-bottom: 1px solid rgba(69, 162, 158, 0.1);
+}
+
+#meuNome {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+
+.highlight {
+    color: #417dff;
+    text-shadow: 0 0 10px rgba(0, 119, 255, 0.4);
+}
+
+#tituloProfissional {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #417dff;
+}
+
+/* RESUMO PROFISSIONAL */
+#resumoProfissional {
+    font-size: 1.05rem;
+    color: #c5c6c7;
+    text-align: justify;
+}
+
+/* FORMAÇÃO ACADÊMICA */
+.item-formacao strong {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* BOX DO CONTADOR */
+.counter-box p {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+#tempoRestanteParaFormatura {
+    font-size: 0.95rem;
+    color: #417dff;
+    font-weight: 500;
+    background-color: rgba(31, 40, 51, 0.4);
+    border: 1px solid rgba(0, 119, 255, 0.2);
+    padding: 10px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+#days-count {
+    font-weight: 700;
+    color: #00ff4c;
+    text-shadow: 0 0 5px rgba(67, 255, 82, 0.6);
+}
+
+/* FOOTER */
+.site-footer {
+    width: 100%;
+    background-color: #000000; 
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+    padding: 25px 0; 
+    text-align: center;
+    margin-top: 60px; 
+}
+
+.site-footer p {
+    color: #45a29e;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* HABILIDADES */
+#lista-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+}
+
+.tag-habilidade {
+    background-color: #172736;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.tag-habilidade:hover {
+    background-color: #1b2230;
+    color: #417dff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.andamento {
+    color: #2dff37; 
+    text-shadow: 0 0 10px rgba(9, 255, 0, 0.4);
+}
+
+/* RESPONSIVIDADE MOBILE (Força a barra do topo e desativa a lateral) */
+@media (min-width: 768px) {
+    /* Quando a classe 'rolou' é injetada, ela deixa de ser uma barra de topo 
+       (ficando invisível lá em cima) e passa a ocupar estritamente a lateral esquerda */
+    .navbar.rolou {
+        width: 85px;
+        height: 100vh;
+        border-bottom: none;
+        border-right: 1px solid rgba(0, 240, 255, 0.2);
+    }
+
+    .navbar.rolou .nav-container {
+        flex-direction: column; /* Links na Vertical */
+        justify-content: center;
+        gap: 40px;
+        padding: 20px 0;
+    }
+}
+
+/* RESPONSIVIDADE MOBILE (Mantém sempre estática no topo em celulares) */
+@media (max-width: 767px) {
+    body, body.menu-lateral-ativo {
+        padding-top: 70px !important;
+        padding-left: 0 !important;
+    }
+    .navbar {
+        width: 100% !important;
+        height: auto !important;
+        position: fixed !important;
+    }
+    .nav-container {
+        flex-direction: row !important;
+        gap: 15px;
+        flex-wrap: wrap; 
+        padding: 12px 10px;
+    }
+    .nav-link {
+        font-size: 0.85rem;
+    }
+}
